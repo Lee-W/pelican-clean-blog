@@ -62,7 +62,15 @@
                 {% for author in article.authors %}
                     <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
                 {% endfor %}
-                 on {{ article.locale_date }}
+                on {{ article.locale_date }}
+                <br />
+
+                {% if article.tags %}
+                    Tagged with
+                    {% for tag in article.tags %}
+                        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                {% endif %}
             </p>
             {% include 'comments.html' %}
         </div>

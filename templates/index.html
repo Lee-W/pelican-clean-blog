@@ -56,6 +56,9 @@
                 {% elif article.summary %}
                     {{ article.summary|striptags|truncate(140) }}
                 {% endif %}
+                    <a a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                        <button type="button" class="btn btn-default">Read More</button>
+                    </a>
                 </p>
             {% endif %}
             <p class="post-meta">Posted by
